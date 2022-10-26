@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An API to Track Press Freedom</title>
+    <link rel="stylesheet" href="base.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="web.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="white.css" type="text/css" media="screen">
+</head>
+<body>
+
+    <h1>An API to Track Press Freedom</h1>
+
+    <div class="slides">
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.001.jpg" alt="Image of slide number 1" />
+            </div>
+            <div class="slide-notes">
+                      <p>Hi! I’m Harris Lapiroff. I work for <a href="https://freedom.press/">Freedom of the Press Foundation</a>, a non-profit that defends journalists and whistleblowers through technology, advocacy, and digital security. I’ve been working in house at FPF for four years, worked for them as a consultant for some three years before that, so I’ve been around for the entire lifespan so far of the project I’m talking to you about today.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.002.jpg" alt="Image of slide number 2" />
+            </div>
+            <div class="slide-notes">
+                      <p>Quick overview of what I’m going to talk about today</p>
+
+      <p>Going to tell you about the U.S. Press Freedom Tracker and its history and purpose</p>
+
+      <p>Going to introduce you to our API</p>
+
+      <p>Going to give you a case study of how we used our data to draw insights about press freedom violations during Black Lives Matter protests in 2020</p>
+
+      <p>Going to give a few other examples of how we’ve used Observable</p>
+
+      <p>And if there’s time, Paul will join me to play with the data live and I can answer any questions people have about the tracker or our data</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.003.jpg" alt="Image of slide number 3" />
+            </div>
+            <div class="slide-notes">
+                      <p>In 2017, in partnership with a couple dozen other press freedom organizations, we launched the <a href="https://pressfreedomtracker.us/">U.S. Press Freedom Tracker</a>. Its purpose is to comprehensively and systematically document aggressions against press freedom in the United States.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.004.jpg" alt="Image of slide number 4" />
+            </div>
+            <div class="slide-notes">
+                      <p>While stories of journalists being attacked and arrested have of course been covered in the past, there wasn’t a central repository of them that we could use to answer questions like: “How many journalists were <a href="https://pressfreedomtracker.us/all-incidents/?categories=4&date_lower=2020-01-01&date_upper=2020-12-31">arrested in 2020</a>? Is it more or fewer than in <a href="https://pressfreedomtracker.us/all-incidents/?categories=4&date_lower=2019-01-01&date_upper=2019-12-31">2019</a>?” or “How many journalists have been subpoenaed this year?”</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.005.jpg" alt="Image of slide number 5" />
+            </div>
+            <div class="slide-notes">
+                      <p>And I think in general, we’ve been quite successful at that goal. Our reporting is commonly cited, among other places, in news stories and amicus briefs in court cases.</p>
+
+      <p>One recent example of the kinds of questions we can answer with the Tracker: last year a journalist, Andrea Sahouri of the Des Moines Register, <a href="https://pressfreedomtracker.us/all-incidents/reporter-pepper-sprayed-arrested-amid-protests-des-moines/">went to trial</a> after being arrested while covering a protest. A lot of reporters turned to us and our data to find out just how common it was for journalists to actually face a criminal trial (the answer: quite uncommon—cases are usually dropped before then).</p>
+
+      <p>As you can see here, Sahouri was eventually acquitted of all charges.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.006.jpg" alt="Image of slide number 6" />
+            </div>
+            <div class="slide-notes">
+                      <p>The tracker organizes incidents into 11 categories. With some of them it’s more possible to be comprehensive than others: for example it’s pretty obvious what qualifies as a leak prosecution or a journalist being arrested, but chilling statements is a both muddier and more expansive category and we couldn’t possibly be comprehensive. And as you can see we also have this catchall “other” category for incidents that we think deserve coverage, but don’t fit neatly anywhere else.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.007.jpg" alt="Image of slide number 7" />
+            </div>
+            <div class="slide-notes">
+                      <p>Each incident is thoroughly reported out by our staff in a narrative form.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.008.jpg" alt="Image of slide number 8" />
+            </div>
+            <div class="slide-notes">
+                      <p>But we also think of the tracker as a database and for every incident we cover, we record a bunch of structured data about it. We knew early on that we wanted to be rigorous in our reporting and provide people a reliable dataset to identify trends and put particular incidents in context.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.009.jpg" alt="Image of slide number 9" />
+            </div>
+            <div class="slide-notes">
+                      <p>So, from the beginning, we’ve had <a href="https://pressfreedomtracker.us/data/">an API</a>, through which people could use the information on our site.</p>
+
+      <p>As you likely know, an API is a way to access data from a system—in our case the U.S. Press Freedom Tracker. Our API in particular doubles as either a way to get an export of the complete contents of the website or to execute a query for a more specific subset of our data and can be easily accessed through a web browser or by any automated script.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.010.jpg" alt="Image of slide number 10" />
+            </div>
+            <div class="slide-notes">
+                      <p>The API can currently be accessed at the URL up top. You can even visit this in a web browser right now if you want! Our website is powered by Django and Django Rest Framework, which provides a friendly interface for exploring the API in a web browser.</p>
+
+      <p>If you do visit, you’ll notice we have several different endpoints. The most important endpoint—the one you’re most likely to want to interact with directly is the incidents endpoint; the rest of them provide extra information about related data types such as a list of categories or individual journalists in our database.</p>
+
+      <p>If you just want to download all the incidents right now, use <a href="https://pressfreedomtracker.us/api/edge/incidents/">https://pressfreedomtracker.us/api/edge/incidents/</a></p>
+
+      <p>The default response is JSON. If you want them as a CSV (bonus, smaller file size) you want <a href="https://pressfreedomtracker.us/api/edge/incidents/?format=csv">https://pressfreedomtracker.us/api/edge/incidents/?format=csv</a>. You may also want to add a high limit parameter since by default the API does paginate.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.011.jpg" alt="Image of slide number 11" />
+            </div>
+            <div class="slide-notes">
+                      <p>Those requests are all appropriate if you just want to download the data and do all the processing offline. We also provide functionality for developing projects around our API that routinely query for new data, filtered as appropriate for your project. This is documented on our website at <a href="https://pressfreedomtracker.us/data/">https://pressfreedomtracker.us/data/</a> — I’m going to avoid getting too technical today by going into the details of those queries, but I’m showing a couple examples here and you can feel free to read the documentation at that first URL or ask me more questions later, either during Q&A or privately afterward.</p>
+
+      <p>One thing I will draw attention to is that by default the responses include all possible fields on every incident which includes the full HTML-formatted rich text for every incident. These can make responses both quite large and a bit slow! If you know which fields you need specifically we do allow you to limit your query just to those fields.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.012.jpg" alt="Image of slide number 12" />
+            </div>
+            <div class="slide-notes">
+                      <p>As I’m sure everyone remembers, in May of last year a black man George Floyd was murdered on video by Minneapolis police officer Derek Chauvin, setting off a month of protests across the country.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.013.jpg" alt="Image of slide number 13" />
+            </div>
+            <div class="slide-notes">
+                      <p>These protests were clearly a reckoning on race for the U.S., but they were also a flashpoint for press freedom. In 2020 we documented a nearly 700 incidents specifically at Black Lives Matter protests.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.014.jpg" alt="Image of slide number 14" />
+            </div>
+            <div class="slide-notes">
+                      <p>For scale the previous three years respectively each saw fewer than 180 incidents. Our staff worked around the clock to meticulously report and document every incident. Again, each of these incidents is published on our website and you can browse the website for those individual reports, but we can also put these incidents into context by charting the aggregate data.</p>
+
+      <p>All of these charts were created in Observable, by the way, in a notebook we’ll share at the end.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.015.jpg" alt="Image of slide number 15" />
+            </div>
+            <div class="slide-notes">
+                      <p>So here, digging into just 2020, you can see how incidents spike in May when protests begin and slowly taper off, but not return to baseline levels, as protests continue over the course of the rest of the year.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.001.jpg" alt="Image of slide number 16" />
+            </div>
+            <div class="slide-notes">
+                      <p>This was <a href="https://observablehq.com/@harrislapiroff/press-freedom-violations-per-day">a timeline of incidents</a> I created in Observable for our website and it actually uses our API to provide quite a bit of interactivity. You can hover over each of the incidents to get details about the specific incident and you can use the highlight menu at the top to call out incidents by city or even by who the aggressor was in each situation. I encourage you to visit the chart and interact with it yourself, but I just want to show off one particular view of it.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.015.jpg" alt="Image of slide number 17" />
+            </div>
+            <div class="slide-notes">
+                      <p>If you ask the dropdown to highlight incidents where the assailant was law enforcement, you can see that the majority of physical attacks on journalists during the protests were perpetrated by law enforcement officers.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.016.jpg" alt="Image of slide number 18" />
+            </div>
+            <div class="slide-notes">
+                      <p>Here’s one other chart I particularly like where we took the top 10 cities by number of incidents and charted them cumulatively over time. You can see how the protests start in Minneapolis in late May and then quickly spread to other cities, but I think Portland is a particularly interesting to follow here, because you can how a pretty steady stream of aggressions against journalists covering the protests quite immediately followed the deployment of Homeland Security agents to Portland.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.017.jpg" alt="Image of slide number 19" />
+            </div>
+            <div class="slide-notes">
+                      <p>I want to share a couple other notebooks I created that were not specific to the George Floyd Protests but that I think are really good examples of the power of having an open API like ours and the ability to explore it with Observable.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.018.jpg" alt="Image of slide number 20" />
+            </div>
+            <div class="slide-notes">
+                      <p>I created this <a href="https://observablehq.com/@harrislapiroff/five-years-of-tracking-press-freedom">beeswarm graphic</a> to mark the fifth anniversary of the Tracker. Since I used the API as its data source, it has continued to update itself, now displaying nearly six full years of aggressions against press freedom.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.019.jpg" alt="Image of slide number 21" />
+            </div>
+            <div class="slide-notes">
+                      <p>The last example I want to show is not a chart but an internal tool I created for our editorial team, which I think really demonstrates the power of having an open API like this and being able to use Observable to quickly explore it. This is a notebook that queries the API and then runs a series of checks on our database to look for inconsistencies, for example, incidents that are missing a city or may have missing location data or even are missing specific data fields that are supposed to be associated with a particular category.</p>
+
+
+            </div>
+        </div>
+        
+        <div class="slide slide--bordered">
+            <div class="slide-image">
+                <img src="images/images.020.jpg" alt="Image of slide number 22" />
+            </div>
+            <div class="slide-notes">
+                      <p>As mentioned, all the charts presented here are on Observable so you can poke at them there.</p>
+
+      <p>And now I’m happy to answer questions people have and Paul will join me to play with some of the data in a live notebook.</p>
+
+
+            </div>
+        </div>
+        
+    </div>
+
+    <p class="credits">Made with <a href="https://keynote-extractor.com">Keynote Extractor</a>.</p>
+
+</body>
+</html>
